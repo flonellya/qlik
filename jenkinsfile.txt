@@ -10,7 +10,7 @@ pipeline {
         booleanParam(name: 'autoApprove', defaultValue: false, description: 'Automatically run apply after generating plan?')
 
     }
-    /// checking out repo  from code commit 
+    /// checking out repo  from github
     stages {
         stage('Git') {
             steps {
