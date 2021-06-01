@@ -4,7 +4,8 @@ pipeline {
 
     parameters {
         string(name: 'env', defaultValue: 'test', description: 'Workspace/environment file to use for deployment')
-        string(name: 'region', defaultValue: 'us-gov-west-1', description: 'AWS region to deploy resources to')
+        string(name: 'region', defaultValue: 'us-gov-east-1', description: 'AWS region to deploy resources to')
+        string(name: 'project', defaultValue: 'smst', description: 'Name of project')
         choice(name: 'Action', description: 'Please review the plan', choices: ['apply', 'destroy'])
         booleanParam(name: 'autoApprove', defaultValue: false, description: 'Automatically run apply after generating plan?')
 
