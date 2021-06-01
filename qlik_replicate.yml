@@ -1,0 +1,32 @@
+---
+- hosts: all
+  connection: local
+  gather_facts: true
+  vars:
+    usernames: attunity
+    usergroups: attunity
+    noncredentials: true
+    verbose: true
+    data: /opt/mydata
+    prefix: /opt/mydir/ areplicate-7.0.0-402.x86_64.rpm
+  environment:
+  shell:
+    variables: arep_login.sh
+    settings: site_are_login.sh
+    configuration: areplicate_arep_login.sh
+  tasks:
+  - name: “see if directory exist”
+    file:
+    path: /opt/mydir/
+    state: directory
+
+  - name: “Install Prerequisite”
+    state: latest
+    command: tar xvf AttunityReplicate_2021_5_0_Linux_X64.tar.gz    
+
+  - name: “Install Qlik Replicate”
+    shell: rpm -ivh areplicate-7.0.0-402.x86_64.rpm
+    dest: export LD_LIBRARY_PATH=/opt/attunity/replicate/lib:/usr/lib64
+
+  - name: “start service”
+    command: /opt/attunity/replicate/bin/areplicate start
