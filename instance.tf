@@ -26,5 +26,5 @@ resource "aws_instance" "qlik_replicate" {
   }
 }
 output "instance_ip_addr" {
-  value = aws_instance.qlik_replicate.server.private_ip
+  value = aws_instance.qlik_replicate.private_ip
 }
