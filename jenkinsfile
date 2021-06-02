@@ -18,13 +18,6 @@ pipeline {
                 checkout scm
             }
         }
-
-    // setting permission on the installation scripts 
-        stage('permission') {
-         steps {      
-                
-            }
-        }
     // running the terraform  plan to output what will be created 
         stage('Plan') {
             steps {
