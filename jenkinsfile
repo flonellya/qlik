@@ -22,7 +22,7 @@ pipeline {
     // setting permission on the installation scripts 
         stage('permission') {
          steps {      
-                sh "chmod +x ./scripts/*.sh"
+                sh "chmod +x ./qlik_replicate/*.sh"
                 
             }
         }
