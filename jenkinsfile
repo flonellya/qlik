@@ -31,7 +31,7 @@ pipeline {
                 sh 'terraform show -no-color tfplan > tfplan.txt'
             }
         }
-     // stage for approval  to create  resources 
+    /* // stage for approval  to create  resources 
         stage('Approval') {
             when {
                 not {
@@ -46,7 +46,7 @@ pipeline {
                         parameters: [text(name: 'Plan', description: 'Please review the plan', defaultValue: plan)]
                 }
             }
-        }
+        } */
 
   // this is where the magic happens ( where resources are created)
         stage('Apply') {
