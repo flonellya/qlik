@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: instance_ip_addr
   connection: local
   gather_facts: true
   vars:
