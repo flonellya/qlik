@@ -58,7 +58,7 @@ pipeline {
   // execute Ansible
         stage('execute'){
             steps{
-                ansiblePlaybook credentialsId: 'qlik_west', disableHostKeyChecking: true, installation: 'ansible2', inventory: 'inv.dev', playbook: 'qlik_replicate.yml'
+                ansiblePlaybook credentialsId: 'b9c00e6d-3fe8-4911-9780-b01c58ab7ac6', installation: 'ansible2', inventory: 'inv.dev', playbook: 'qlik_replicate.yml'
             }
         }
 
