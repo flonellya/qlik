@@ -1,5 +1,5 @@
 ---
-sts: all
+- hosts: all
   gather_facts: true
   become: yes
   roles:
@@ -36,7 +36,8 @@ sts: all
     unarchive:
       src: AttunityReplicate_2021_5_0_Linux_X64.tar.gz
       dest: /opt/attunity/
-      
+
+
   - name: “Install Qlik Replicate”
     yum:
       name: /opt/attunity/areplicate-2021.5.0-745.x86_64.rpm
@@ -44,4 +45,5 @@ sts: all
 
   - name: “start service”
     command: /opt/attunity/replicate/bin/areplicate start
+
 
