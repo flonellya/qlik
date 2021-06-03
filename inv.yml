@@ -1,1 +1,2 @@
 [hosts]
+instance_ip_addr ansible_user=ec2-user
