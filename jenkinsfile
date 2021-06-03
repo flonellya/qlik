@@ -55,7 +55,12 @@ pipeline {
                 //-input=false tfplan"
             }
         }
-
+  // execute Ansible
+        stage('execute'){
+            steps{
+                ansiblePlaybook credentialsId: 'qlik_west', disableHostKeyChecking: true, installation: 'ansible2', inventory: 'inv.dev', playbook: 'qlik_replicate.yml'
+            }
+        }
 
     }
 
