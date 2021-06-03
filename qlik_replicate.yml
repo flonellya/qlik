@@ -28,7 +28,7 @@
 
   - name: "Download Package"
     get_url:
-      url: https://stigsmitsi1.s3-us-gov-west-1.amazonaws.com/AttunityReplicate_2021_5_0_Linux_X64.tar.gz
+      url: https://test-replicate.s3-us-gov-west-1.amazonaws.com/areplicate-7.0.0-402.x86_64.tar
       dest: /opt/attunity/
       mode: '0755'
 
