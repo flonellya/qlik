@@ -1,5 +1,5 @@
 ---
-- hosts: value = aws_instance.qlik_replicate.private_ip
+- hosts: value 
   connection: local
   gather_facts: true
   vars:
