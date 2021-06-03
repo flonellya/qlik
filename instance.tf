@@ -25,4 +25,6 @@ resource "aws_instance" "qlik_replicate" {
     Poc = "florence.vinyo@manteh.com"
   }
 }
-
+output "instance_ip_addr" {
+  value = aws_instance.qlik_replicate.private_ip
+}
