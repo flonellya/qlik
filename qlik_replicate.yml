@@ -1,32 +1,48 @@
 ---
-- hosts: all 
-  connection: local
+sts: all
   gather_facts: true
+  become: yes
+  roles:
   vars:
-    usernames: attunity
-    usergroups: attunity
+    user: attunity
+    group: attunity
     noncredentials: true
     verbose: true
-    data: /opt/mydata
-    prefix: /opt/mydir/ areplicate-7.0.0-402.x86_64.rpm
+    data: /opt/attunity/replicate-data
+    prefix: /opt/attunity/
   environment:
-  shell:
     variables: arep_login.sh
     settings: site_are_login.sh
     configuration: areplicate_arep_login.sh
   tasks:
+  - name: "Install unzip"
+    yum:
+      name:
+        - unzip
+      state: present
+
   - name: “see if directory exist”
     file:
-    path: /opt/mydir/
-    state: directory
+      path: /opt/attunity/
+      state: directory
 
-  - name: “Install Prerequisite”
-    state: latest
-    command: tar xvf AttunityReplicate_2021_5_0_Linux_X64.tar.gz    
+  - name: "Download Package"
+    get_url:
+      url: https://stigsmitsi1.s3-us-gov-west-1.amazonaws.com/AttunityReplicate_2021_5_0_Linux_X64.tar.gz
+      dest: /opt/attunity/
+      mode: '0755'
+
+  - name: “Unpack Package”
+    unarchive:
+      src: AttunityReplicate_2021_5_0_Linux_X64.tar.gz
+      dest: /opt/attunity/
+      remote_src: yes
 
   - name: “Install Qlik Replicate”
-    shell: rpm -ivh areplicate-7.0.0-402.x86_64.rpm
-    dest: export LD_LIBRARY_PATH=/opt/attunity/replicate/lib:/usr/lib64
+    yum:
+      name: /opt/attunity/areplicate-2021.5.0-745.x86_64.rpm
+      state: present
 
   - name: “start service”
     command: /opt/attunity/replicate/bin/areplicate start
+
