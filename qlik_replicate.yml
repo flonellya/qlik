@@ -36,6 +36,7 @@
     unarchive:
       src: AttunityReplicate_2021_5_0_Linux_X64.tar.gz
       dest: /opt/attunity/
+      remote_src: yes
 
 
   - name: “Install Qlik Replicate”
