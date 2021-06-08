@@ -34,7 +34,7 @@
 
   - name: “Unpack Package”
     unarchive:
-      src: AttunityReplicate_2021_5_0_Linux_X64.tar.gz
+      src: areplicate-7.0.0-402.x86_64.tar
       dest: /opt/attunity/
       remote_src: yes
 
