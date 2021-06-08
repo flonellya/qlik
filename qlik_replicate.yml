@@ -36,6 +36,7 @@
     unarchive:
       src: areplicate-7.0.0-402.x86_64.tar
       dest: /opt/attunity/
+      remote_src: yes
 
 
   - name: “Install Qlik Replicate”
