@@ -17,6 +17,7 @@ resource "aws_instance" "qlik_replicate" {
   instance_type = "t3.medium"
   subnet_id =  "subnet-0ab643787de239342"
   key_name = "qlik_west"
+  security_group = "sg-039f2d81b207cb7da"
 
   tags = {
     Name = "Attunity-replicate"
