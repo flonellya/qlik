@@ -47,9 +47,3 @@ terraform {
     //dynamodb_table = "terraform-state-lock-dynamo-smst"
   }
 }
-
-
-# Configure the AWS Provider
-provider "aws" {
-  region = var.region
-}
