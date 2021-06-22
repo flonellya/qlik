@@ -1,10 +1,7 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 3.27"
-    }
-  }
+#user_data = "./scripts/qlik_silent_install.ps1"
+
+data "template_file" "Qlik-userdata" {
+    template = file("./scripts/qlik_silent_install.ps1")
 }
 
 provider "aws" {
