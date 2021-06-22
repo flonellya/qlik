@@ -24,9 +24,3 @@ resource "aws_dynamodb_table" "dynamodb-terraform-state-lock" {
     Name = "DynamoDB Terraform State Lock Table"
   }
 }
-
-terraform {
-       key    = "statefiles"
-    region = "us-gov-east-1"
-    //dynamodb_table = "terraform-state-lock-dynamo-smst"
-}
