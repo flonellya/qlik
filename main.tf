@@ -7,21 +7,7 @@ terraform {
   }
 }
 
-# resource "aws_s3_bucket" "terraform-state-storage-s3" {
-#     bucket = "terraform-remote-state-storage-s3-smst"
- 
-#     versioning {
-#       enabled = true
-#     }
- 
-#     lifecycle {
-#       prevent_destroy = true
-#     }
- 
-#     tags =  {
-#       Name = "S3-Remote-Terraform-State-Store-smst"
-#     }      
-# }
+
 # create a dynamodb table for locking the state file
 resource "aws_dynamodb_table" "dynamodb-terraform-state-lock" {
   name = "terraform-state-lock-dynamo-smst"
@@ -40,9 +26,8 @@ resource "aws_dynamodb_table" "dynamodb-terraform-state-lock" {
 }
 
 terraform {
-  backend "s3" {
-    bucket = "terraform-remote-state-storage-s3-smst"
-    key    = "statefiles"
+  backend "default" {
+       key    = "statefiles"
     region = "us-gov-east-1"
     //dynamodb_table = "terraform-state-lock-dynamo-smst"
   }
