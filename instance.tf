@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 3.0"
+      version = "~> 3.27"
     }
   }
 }
@@ -29,3 +29,4 @@ resource "aws_instance" "qlik_replicate" {
 output "instance_ip_addr" {
   value = aws_instance.qlik_replicate.private_ip
 }
+
