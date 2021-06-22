@@ -1,7 +1,7 @@
-#user_data = "./scripts/qlik_silent_install.ps1"
+#user_data = "./nprinting/qlik_nprinting.ps1"
 
 data "template_file" "Qlik-userdata" {
-    template = file("./scripts/qlik_silent_install.ps1")
+    template = file("./nprinting/qlik_nprinting.ps1")
 }
 
 provider "aws" {
@@ -15,6 +15,7 @@ resource "aws_instance" "nprinting" {
   subnet_id =  "subnet-0ab643787de239342"
   key_name = "qlik_west"
   security_groups = ["sg-0c6c83b593c0d9f1b"]
+  user_data = data.template_file.Qlik-userdata.rendered  
 
   tags = {
     Name = "nprinting"
