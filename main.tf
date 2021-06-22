@@ -26,9 +26,7 @@ resource "aws_dynamodb_table" "dynamodb-terraform-state-lock" {
 }
 
 terraform {
-  backend "" {
        key    = "statefiles"
     region = "us-gov-east-1"
     //dynamodb_table = "terraform-state-lock-dynamo-smst"
-  }
 }
