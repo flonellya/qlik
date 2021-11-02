@@ -6,8 +6,8 @@ RUN apk update && apk add /bin/sh
 RUN mkdir -p /opt/app
 ENV PROJECT_HOME /opt/app
 
-COPY target/spring-boost-mongo-1.0jar $PROJECT_HOME/spring-boost-mongo.jar
+COPY target/qlik-deployment-1.0jar $PROJECT_HOME/qlik-deployment.jar
 
 WORKDIR $PROJECT_HOME
 
-CMD ["java" , "-jar","./spring-boost-mongo.jar"]
+CMD ["java" , "-jar","./qlik-deployment.jar"]
