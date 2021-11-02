@@ -7,17 +7,23 @@
     usergroups: attunity
     noncredentials: true
     verbose: true
-    data: /opt/mydata
-    prefix: /opt/mydir/ areplicate-7.0.0-402.x86_64.rpm
+    data: /opt/attunity/replicate-data
+    prefix: /opt/attunity/
   environment:
   shell:
     variables: arep_login.sh
     settings: site_are_login.sh
     configuration: areplicate_arep_login.sh
   tasks:
+  - name: "Install unzip"
+    yum:
+      name:
+        - unzip
+      state: presen
+      
   - name: “see if directory exist”
     file:
-    path: /opt/mydir/
+    path: /opt/attunity/
     state: directory
 
   - name: “Install Prerequisite”
