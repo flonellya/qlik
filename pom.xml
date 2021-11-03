@@ -1,16 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <settings xmlns="http://maven.apache.org/SETTINGS/1.2.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd">
   Default: ${user.home}/.m2/repository
-  <localRepository>/path/to/local/repo</localRepository>
-          
+  <localRepository>/path/to/local/repo</localRepository>        
  <mirror>
       <id>mirrorId</id>
       <mirrorOf>repositoryId</mirrorOf>
       <name>Human Readable Name for this Mirror.</name>
       <url>http://my.repository.com/repo/path</url>
-    </mirror>         
-          
+    </mirror>              
 <mirror>
       <id>maven-default-http-blocker</id>
       <mirrorOf>external:http:*</mirrorOf>
@@ -19,7 +18,6 @@
       <blocked>true</blocked>
     </mirror>
   </mirrors>          
-
 <profile>
       <id>env-dev</id>
       <activation>
@@ -28,32 +26,25 @@
           <value>dev</value>
         </property>
       </activation>
-
       <properties>
         <tomcatPath>/path/to/tomcat/instance</tomcatPath>
       </properties>
     </profile>
-
 <activeProfiles>
     <activeProfile>alwaysActiveProfile</activeProfile>
     <activeProfile>anotherAlwaysActiveProfile</activeProfile>
   </activeProfiles>
-
 <groupId>org.myco.myplugins</groupId>
         <artifactId>myplugin</artifactId>
-     
         <configuration>
           <tomcatLocation>${tomcatPath}</tomcatLocation>
         </configuration>
        </plugin>
-
 <profile>
       <id>jdk-1.4</id>
-
       <activation>
         <jdk>1.4</jdk>
       </activation>
-
       <repositories>
         <repository>
           <id>jdk14</id>
