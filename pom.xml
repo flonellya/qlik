@@ -1,6 +1,5 @@
 <profile>
       <id>env-dev</id>
-
       <activation>
         <property>
           <name>target-env</name>
