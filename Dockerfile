@@ -5,8 +5,8 @@ FROM openjdk:8-alpine
 RUN mkdir -p /opt/app
 ENV PROJECT_HOME /opt/app
 
-COPY target/qlik-deployment-1.0jar $PROJECT_HOME/qlik-deployment.jar
+COPY target/qlik-deployment $PROJECT_HOME/qlik-deployment
 
 WORKDIR $PROJECT_HOME
 
-CMD ["java" , "-jar","./qlik-deployment.jar"]
+CMD ["java" , "-jar","./qlik-deployment"]
