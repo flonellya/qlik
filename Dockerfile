@@ -9,4 +9,4 @@ COPY target/qlik-deployment-1.0.jar $PROJECT_HOME/qlik-deployment.jar
 
 WORKDIR $PROJECT_HOME
 
-CMD ["java" , "-jar","./qlik-deployment.jar"]
+CMD ["java" , "-jar", "target/qlik-deployment.jar"]
