@@ -1,7 +1,6 @@
 FROM openjdk:8-alpine
 
 # #Required for starting application up.
-RUN update && add /bin/sh
 
 RUN mkdir -p /opt/app
 ENV PROJECT_HOME /opt/app
