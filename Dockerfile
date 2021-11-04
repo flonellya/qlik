@@ -10,4 +10,4 @@ COPY target/sprint-qlik-application-1.0.jar $PROJECT_HOME/sprint-qlik-applicatio
 
 WORKDIR $PROJECT_HOME
 
-CMD ["java" , "-jar", "target/sprint-qlik-application.jar"]
+CMD ["java" , "-jar", "./sprint-qlik-application.jar"]
