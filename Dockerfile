@@ -6,7 +6,7 @@ RUN apk update && apk add /bin/sh
 RUN mkdir -p /opt/app
 ENV PROJECT_HOME /opt/app
 
-COPY target/sprint-qlik-application-1.0.jar $PROJECT_HOME/sprint-qlik-application.jar
+COPY sprint-qlik-application $PROJECT_HOME/sprint-qlik-application.jar
 
 WORKDIR $PROJECT_HOME
 
