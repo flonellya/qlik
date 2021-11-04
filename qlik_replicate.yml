@@ -1,5 +1,5 @@
 ---
-- hosts: inventory 
+- hosts: all 
   gather_facts: true
   become: yes
   roles:
