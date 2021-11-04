@@ -1,12 +1,13 @@
 FROM openjdk:8-alpine
 
 # #Required for starting application up.
+RUN apk update && apk add /bin/sh
 
 RUN mkdir -p /opt/app
 ENV PROJECT_HOME /opt/app
 
-#COPY /usr/share/man/man1/jar/1/gz $PROJECT_HOME/qlik-deployment.jar
+COPY target/sprint-qlik-application-1.0.jar $PROJECT_HOME/sprint-qlik-application.jar
 
 WORKDIR $PROJECT_HOME
 
-CMD ["java" , "-jar", "target/qlik-deployment.jar"]
+CMD ["java" , "-jar", "target/sprint-qlik-application.jar"]
