@@ -6,8 +6,8 @@ RUN apk update && apk add /bin/sh
 RUN mkdir -p /opt/app
 ENV PROJECT_HOME /opt/app
 
-COPY qlik-application $PROJECT_HOME/qlik-application.jar
+COPY qlik_replicate.yml $PROJECT_HOME/qlik_replicate.jar
 
 WORKDIR $PROJECT_HOME
 
-CMD ["java" , "-jar", "./sprint-qlik-application.jar"]
+CMD ["java" , "-jar", "./sprint-qlik_replicate.jar"]
