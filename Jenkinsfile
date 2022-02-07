@@ -47,13 +47,13 @@ pipeline {
             }
         } */
 
-  // this is where the magic happens ( where resources are created)
+ /* // this is where the magic happens ( where resources are created)
         stage('Apply') {
             steps {
                 sh "terraform ${params.Action} -var 'region=${params.region}'  -var 'env=${params.env}' -var 'project=${params.project}' -auto-approve"
                 //-input=false tfplan"
             }
-        }
+        }/*
   // execute Ansible
         stage('execute'){
             steps{
