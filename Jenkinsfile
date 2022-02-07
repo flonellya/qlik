@@ -17,12 +17,12 @@ pipeline {
                 checkout scm
             }
         }
-    // running the terraform  plan to output what will be created 
+   /* // running the terraform  plan to output what will be created 
         stage('Plan') {
             steps {
                 script {
                     currentBuild.displayName = params.version
-                }
+                }/*
                 
                 sh "pwd"
                 sh 'terraform init -input=false'
@@ -36,7 +36,7 @@ pipeline {
                 not {
                     equals expected: true, actual: params.autoApprove
                 }
-            }
+            }/*
 
             steps {
                 script {
