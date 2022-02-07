@@ -13,11 +13,11 @@ provider "aws" {
 }
 
 resource "aws_instance" "qlik_replicate" {
-  ami           = "ami-008a7a42f9c885956"
+  ami           = "ami-0bbf3595bb2fb39ec"
   instance_type = "t3.medium"
-  subnet_id =  "subnet-0c10df3f9e5866889"
+  subnet_id =  "subnet-0ab643787de239342"
   key_name = "qlik_west"
-  security_groups = ["sg-0a4b195f1bc2000a2"]
+  security_groups = ["sg-039f2d81b207cb7da"]
 
   tags = {
     Name = "Attunity-replicate"
