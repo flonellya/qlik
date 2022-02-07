@@ -1,6 +1,5 @@
 pipeline {
-    // agent master
-    agent { node { label 'master' } }
+    agent any
 
     parameters {
         string(name: 'env', defaultValue: 'test', description: 'Workspace/environment file to use for deployment')
