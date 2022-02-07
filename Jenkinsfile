@@ -1,7 +1,6 @@
 pipeline {
-    // agent master
-    agent { node { label 'master' } }
-
+    agent any
+    
     parameters {
         string(name: 'env', defaultValue: 'test', description: 'Workspace/environment file to use for deployment')
         string(name: 'region', defaultValue: 'us-gov-west-1', description: 'AWS region to deploy resources to')
