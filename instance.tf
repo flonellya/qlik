@@ -17,7 +17,7 @@ resource "aws_instance" "qlik_replicate" {
   instance_type = "t3.medium"
   subnet_id =  "subnet-0c10df3f9e5866889"
   key_name = "mantech-g2ops-dev"
-  security_groups = ["sg-039f2d81b207cb7da"]
+  security_groups = ["sg-0a4b195f1bc2000a2"]
 
   tags = {
     Name = "Attunity-replicate"
