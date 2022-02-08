@@ -13,10 +13,10 @@ provider "aws" {
 }
 
 resource "aws_instance" "qlik_replicate" {
-  ami           = "ami-0bbf3595bb2fb39ec"
+  ami           = "ami-008a7a42f9c885956"
   instance_type = "t3.medium"
-  subnet_id =  "subnet-0ab643787de239342"
-  key_name = "qlik_west"
+  subnet_id =  "subnet-0c10df3f9e5866889"
+  key_name = "mantech-g2ops-dev"
   security_groups = ["sg-039f2d81b207cb7da"]
 
   tags = {
