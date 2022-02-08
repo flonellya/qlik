@@ -42,11 +42,6 @@ resource "aws_instance" "Linux_TF_Test" {
     associate_public_ip_address = false
     source_dest_check           = true
 
-    root_block_device {
-        volume_type           = "gp2"
-        volume_size           = 20
-        delete_on_termination = true
-    }
 
     tags = {
         Name = "Linux_TF_Test"
@@ -68,12 +63,7 @@ resource "aws_instance" "Windows_TF_Test" {
     associate_public_ip_address = false
     source_dest_check           = true
 
-    root_block_device {
-        volume_type           = "gp2"
-        volume_size           = 20
-        delete_on_termination = true
-    }
-
+   
     tags = {
         Name = "Windows_TF_Test"
         env = "dev"
